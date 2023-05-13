@@ -10,7 +10,7 @@ using librarywork.src.context;
 namespace librarywork.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20230512184634_InitialCreate")]
+    [Migration("20230513151934_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -29,11 +29,13 @@ namespace librarywork.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(15)");
 
                     b.Property<string>("Surname")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(15)");
 
                     b.HasKey("Id");
 
@@ -51,8 +53,8 @@ namespace librarywork.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(15)");
 
                     b.Property<string>("PublishYear")
                         .IsRequired()
@@ -60,7 +62,8 @@ namespace librarywork.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
 
                     b.HasKey("Id");
 

@@ -1,7 +1,5 @@
-﻿using System;
-using librarywork.src.models;
+﻿using librarywork.src.models;
 using librarywork.src.context;
-using static System.Reflection.Metadata.BlobBuilder;
 
 namespace librarywork.src.manager
 {
@@ -14,7 +12,7 @@ namespace librarywork.src.manager
                 try
                 {
                     context.Authors.Add(author);
-                    Console.WriteLine("Yazar eklendi");
+                    Console.WriteLine("Author Added");
                 }
                 catch (Exception ex)
                 {
@@ -34,7 +32,7 @@ namespace librarywork.src.manager
                 try
                 {
                     context.Authors.AddRange(authors);
-                    Console.WriteLine("Yazarlar eklendi");
+                    Console.WriteLine("Authors Added");
                 }
                 catch (Exception ex)
                 {
@@ -54,7 +52,7 @@ namespace librarywork.src.manager
                 try
                 {
                     context.Books.Add(book);
-                    Console.WriteLine("Kitap eklendi");
+                    Console.WriteLine("Book Added");
                 }
                 catch (Exception ex)
                 {
@@ -74,7 +72,7 @@ namespace librarywork.src.manager
                 try
                 {
                     context.Books.AddRange(books);
-                    Console.WriteLine("Kitaplar eklendi");
+                    Console.WriteLine("Books Added");
                 }
                 catch (Exception ex)
                 {
@@ -94,7 +92,7 @@ namespace librarywork.src.manager
                 try
                 {
                     context.Authors.Remove(author);
-                    Console.WriteLine("Yazar Silindi");
+                    Console.WriteLine("Author Deleted");
                 }
                 catch (Exception ex)
                 {
@@ -115,7 +113,7 @@ namespace librarywork.src.manager
                 try
                 {
                     context.Books.Remove(book);
-                    Console.WriteLine("Kitap Silindi");
+                    Console.WriteLine("Book Deleted");
                 }
                 catch (Exception ex)
                 {
@@ -137,10 +135,10 @@ namespace librarywork.src.manager
                     List<Author> authors = context.Authors.ToList();
                     foreach (var author in authors)
                     {
-                        Console.WriteLine("Yazar--------------");
-                        Console.WriteLine("Yazarın Id'si: " + author.Id);
-                        Console.WriteLine("Yazarın ismi: " + author.Name);
-                        Console.WriteLine("Yazarın soyismi:" + author.Surname);
+                        Console.WriteLine("Author--------------");
+                        Console.WriteLine("Authors Id: " + author.Id);
+                        Console.WriteLine("Authors Name: " + author.Name);
+                        Console.WriteLine("Authors Surname:" + author.Surname);
                         Console.WriteLine();
                     }
                 }
@@ -164,11 +162,11 @@ namespace librarywork.src.manager
                     List<Book> books = context.Books.ToList();
                     foreach (var book in books)
                     {
-                        Console.WriteLine("Kitap--------------");
-                        Console.WriteLine("Kitapın Id'si: " + book.Id);
-                        Console.WriteLine("Kitapın ismi: " + book.Name);
-                        Console.WriteLine("Kitap Başlığı: " + book.Title);
-                        Console.WriteLine("Yazarın Id'si: " + book.AuthorId);
+                        Console.WriteLine("Book--------------");
+                        Console.WriteLine("Book Id: " + book.Id);
+                        Console.WriteLine("Book Name: " + book.Name);
+                        Console.WriteLine("Book Title: " + book.Title);
+                        Console.WriteLine("Author Id: " + book.AuthorId);
                         Console.WriteLine();
                     }
                 }
@@ -222,16 +220,16 @@ namespace librarywork.src.manager
                     var book = context.Books.Where(p => p.Id == Id).FirstOrDefault();
                     if (book != null)
                     {
-                        Console.WriteLine("-----Kitap-----");
-                        Console.WriteLine("Kitapın Id'si: " + book.Id);
-                        Console.WriteLine("Kitapın ismi: " + book.Name);
-                        Console.WriteLine("Kitap Başlığı: " + book.Title);
-                        Console.WriteLine("Yazarın Id'si: " + book.AuthorId);
+                        Console.WriteLine("-----Book-----");
+                        Console.WriteLine("Book Id: " + book.Id);
+                        Console.WriteLine("Book Name: " + book.Name);
+                        Console.WriteLine("Book Title: " + book.Title);
+                        Console.WriteLine("Author Id: " + book.AuthorId);
 
                     }
                     else
                     {
-                        Console.WriteLine("Kitap bulunamadı");
+                        Console.WriteLine("Book not found");
                     }
 
 
@@ -259,11 +257,11 @@ namespace librarywork.src.manager
                         DbAuthor.Id = author.Id;
                         DbAuthor.Name = author.Name;
                         DbAuthor.Surname = author.Surname;
-                        Console.WriteLine("Yazar Güncellendi");
+                        Console.WriteLine("Author Updated");
                     }
                     else
                     {
-                        Console.WriteLine("Yazar Bulunamadı");
+                        Console.WriteLine("Author not found");
                     }
                 }
                 catch (Exception ex)
@@ -291,11 +289,11 @@ namespace librarywork.src.manager
                         DbBook.Title = book.Title;
                         DbBook.PublishYear = book.PublishYear;
                         DbBook.AuthorId = book.AuthorId;
-                        Console.WriteLine("Kitap Güncellendi");
+                        Console.WriteLine("Book Updated");
                     }
                     else
                     {
-                        Console.WriteLine("Yazar Bulunamadı");
+                        Console.WriteLine("Author not found");
                     }
                 }
                 catch (Exception ex)
