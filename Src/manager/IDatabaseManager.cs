@@ -13,11 +13,11 @@ namespace librarywork.src.manager
 
         void GetAuthorById(int Id);
 
-        void CreateBook(Book book);
+        //void CreateBook(Book book);
 
         void CreateBooks(List<Book> books);
 
-        void CreateAuthor(Author author);
+        //void CreateAuthor(Author author);
 
         void CreateAuthors(List<Author> authors);
 

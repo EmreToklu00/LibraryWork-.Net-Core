@@ -5,25 +5,25 @@ namespace librarywork.src.manager
 {
     public class DatabaseManager : IDatabaseManager
     {
-        public void CreateAuthor(Author author)
-        {
-            using (LibraryContext context = new LibraryContext())
-            {
-                try
-                {
-                    context.Authors.Add(author);
-                    Console.WriteLine("Author Added");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                }
-                finally
-                {
-                    context.SaveChanges();
-                }
-            }
-        }
+        /*  public void CreateAuthor(Author author)
+         {
+             using (LibraryContext context = new LibraryContext())
+             {
+                 try
+                 {
+                     context.Authors.Add(author);
+                     Console.WriteLine("Author Added");
+                 }
+                 catch (Exception ex)
+                 {
+                     Console.WriteLine(ex);
+                 }
+                 finally
+                 {
+                     context.SaveChanges();
+                 }
+             }
+         } */
 
         public void CreateAuthors(List<Author> authors)
         {
@@ -45,7 +45,7 @@ namespace librarywork.src.manager
             }
         }
 
-        public void CreateBook(Book book)
+        /* public void CreateBook(Book book)
         {
             using (LibraryContext context = new LibraryContext())
             {
@@ -64,7 +64,7 @@ namespace librarywork.src.manager
                 }
             }
         }
-
+ */
         public void CreateBooks(List<Book> books)
         {
             using (LibraryContext context = new LibraryContext())
